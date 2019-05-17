@@ -1,8 +1,10 @@
 library(ComplexHeatmap)
+library(circlize)
 
-path = "/data/workspace/camara/kinase_inhibitor/Files/"
+path = "../../data/"
 for (i in list.files(path)) {
 dataset <- read.csv(paste(path,i, sep=""))
+colnames(dataset)[1]="X"
 dataset <- dataset[!duplicated(dataset$X),]
 row.names(dataset) <- dataset$X
 dataset$X <- NULL
@@ -14,7 +16,7 @@ if (grepl("DSF", i) == TRUE){
   color = colorRamp2(c(-100, 0, 100), c("red", "white", "blue"))  
 }
 len = length(unlist(strsplit(i,"\\_")))
-svg(file=paste0("/data/workspace/camara/kinase_inhibitor/output/heatmaps/",i,"_Pearson_unscaled.svg"),
+svg(file=paste0("../Report",i,"_Pearson_unscaled.svg"),
     width=ifelse(dim(dataset)[2] > 300, 26.5 , ifelse(dim(dataset)[2] > 200, 16.5 , 7.25 )),
     height=ifelse(dim(dataset)[2] > 100, 8, 5))
 print(Heatmap(dataset, name="Value",
