@@ -231,6 +231,7 @@ corrdf$jit = runif(length(corrdf$num),0,0.3)
 op=par(mfrow=c(1,2),mar=c(10, 4, 4, 2) + 0.1)
 
 pcut=0.001
+zcutoff = 2
 plot(corrdf$num+corrdf$jit,corrdf$corr,pch=16,col=rgb(0,0,0,0.2),ylab="Correlation",xlab="",axes=FALSE)
 points((corrdf$num+corrdf$jit)[corrdf$hit],corrdf$corr[corrdf$hit],pch=16,col="red",cex=0.75)
 #points((corrdf$num+corrdf$jit)[abs(corrdf$z)>zcutoff],corrdf$corr[abs(corrdf$z)>zcutoff],pch=16,col="blue",cex=0.25)
