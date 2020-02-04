@@ -14,4 +14,4 @@ This script will use all available CPUs on your machine (less one).  Typically t
 nreps = 10
 ```
 
-Once either the demo or the full analysis have completed, you should find that the R code has run without errors and an output file "Sampling_fixed.pdf" generated in the root directory.
+Once either the demo or the full analysis have completed, you should find that the R code has run without errors and two output files ("Sampling_fixed.pdf" & "Sampling_varying.pdf") generated in the root directory.
